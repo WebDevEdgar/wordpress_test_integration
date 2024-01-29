@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Random Facts
- * Plugin URI:  https://www.linkedin.com/in/webedgar/
+ * Plugin URI:  https://github.com/WebDevEdgar/wordpress_test_integration
  * Description: Shows random facts aboit cats and dogs in the footer of page
  * Version:     0.1
  * Author:      Edgar Khachaturov
