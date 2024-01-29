@@ -1,0 +1,9 @@
+#randomFacts{
+    padding: 15px;
+    width: 100%;
+    background-color: white;
+    max-width: 450px;
+}
+#randomFacts time{
+    font-style: italic;
+}
