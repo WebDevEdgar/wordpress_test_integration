@@ -31,7 +31,7 @@ class RandomFactsCat extends RandomFacts
      */
     private function getTemplate($data) : string{
         $html = '<blockquote id="randomFacts">';
-        $html .= '<strong><time>'.$data['created_at'].'</time></strong>';
+        $html .= '<strong><time datetime="'.$data['created_at'].'">'.$data['created_at'].'</time></strong>';
         $html .= "<p>".$data['text']."</p>";
         $html .= '</blockquote>';
         return $html;
