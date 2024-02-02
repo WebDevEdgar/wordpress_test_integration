@@ -1,20 +1,26 @@
 <?php
-use GuzzleHttp\Exception\GuzzleException;
 
-class RandomFactsCat extends RandomFacts
+use GuzzleHttp\Exception\GuzzleException;
+require_once 'RandomFactsDog.php';
+
+class RandomFactsCat extends RandomFactsDog
 {
     private static string $URL = 'https://cat-fact.herokuapp.com/facts';
 
+    public function __construct($client)
+    {
+        RandomFactsDog::__construct($client);
+        $this->client = $client;
+    }
+
     /**
-     * @param $client
      * @return string[]
      */
-    public function force($client) : array{
+    public function force() : array{
         try {
-            $request = $client->request('get', self::$URL);
-            $data = $this->parseJson(
-                $this->handleResponse($request)
-            );
+            $request = $this->client->request('get', self::$URL);
+            $bodyArray = $this->handleResponse($request);
+            $data = $this->parseJson($bodyArray);
             if (isset($data['text'], $data['created_at'])){
                 echo $this->getTemplate($data);
                 return ['status'=>'success'];
